@@ -13,10 +13,9 @@
    - header, footer 제거
    - 수식 정리(수식을 검색할 일이 있나?)
 
-### 2. Section별 분류 완성 안 됨
+### 2. Section별 분류 개선하기
    - [정규표현식(regular expression)](https://wikidocs.net/1669) 스터디 필요
    - 각자 기준을 정해서, 기준별로 section 분류하기
-
 
 ### 3. 출판년도별 기준 검색 가능하게하기
    - KDS 22 (진행중)
