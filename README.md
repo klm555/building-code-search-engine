@@ -21,12 +21,14 @@
 ### 3. 출판년도별 기준 검색 가능하게하기
    - KDS 22 (진행중)
    - ASCE 17 (진행중)
+   - KBC 2016 (진행중)
    
 ### 4. 개선 및 idea 도출을 위한 스터디
    - [자연어 처리](https://wikidocs.net/book/2155) 스터디
    - [google](https://developers.google.com/search/docs/fundamentals/how-search-works?hl=ko) 등에서 사용하는 검색 알고리즘
    - 검색 결과 ranking 매기기, ranking 또는 인기 순으로 결과 보여주기
    - 자동완성
+   - 구조 분야에서 확장할 수 있는 분야 생각해보기
 
 ### 5. UI 작성
 
