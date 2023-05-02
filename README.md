@@ -28,8 +28,6 @@
 
 ### 5. UI 작성
 
-### etc. 검색어 ranking, 인기검색어 / 자동완성 
-
 #  간략한 Flow Chart
 ![image](https://user-images.githubusercontent.com/95464748/235672748-5b68395f-34ac-4222-9945-2480451accd6.png)
 
