@@ -13,11 +13,11 @@ from langchain.llms import OpenAI
 
 # 사용자 질문 입력 받기
 query = simpledialog.askstring("검색", "질문을 입력하세요:")
-root.geometry("500x300")
+
 
 # query에서 가장 중요한 검색어 추출 (with GPT)
-os.environ["OPENAI_API_KEY"] = "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"
-llm = OpenAI(temperature=0)
+os.environ["OPENAI_API_KEY"] = ""
+llm = OpenAI(model_name="gpt-3.5-turbo", temperature=0) 
 template = """ List the important words in '{query}' in order of importance with one sentence delimited by ','. """
 prompt = PromptTemplate(input_variables=['query'], template=template)
 final_prompt = prompt.format(query=query)
@@ -78,4 +78,5 @@ pdf_file.close()
 
 # link_window 크기 조정 및 실행
 link_window.geometry('180x180')
-link_window.deiconify
+link_window.deiconify()  # 창 활성화
+link_window.mainloop()
