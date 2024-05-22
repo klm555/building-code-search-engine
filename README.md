@@ -1,30 +1,36 @@
 # building-code-search-engine
+![Static Badge](https://img.shields.io/badge/Python-3.10.11-%233776AB?logo=Python)
+![Static Badge](https://img.shields.io/badge/OpenAI-1.30.1-%23412991?logo=OpenAI)
+![Static Badge](https://img.shields.io/badge/LangChain-0.2.0-%23000000)
 
 
-**기준(또는 지침) 검색을 위한 프로그램 개발** 프로젝트입니다. (2023.05.02기준)
 
-매주 월요일 10시 30분에 meeting 진행됩니다.
+**기준(또는 지침) 검색을 위한 프로그램 개발** 프로젝트입니다.
 
-#  진행상황
-- 매주 월요일 10시 30분 meeting
-- 5월중 1차 완성
-- 완성 후 피드백 받기
-- 검증, 개선, 최적화 방안 도출
+# 개발목표
+5월 중 완료
+
+# 진행상황
+- searching algorithm (embedding) 구현중
+- UI와 연결 완료
 
 # 해결해야할 것
-### 1. PDF 정리
+### 1. pdf $\rightarrow$ txt
+   - 다른 방법이 있나? (unstructured in langchain community)
    - header, footer 제거
-   - 수식 정리(수식을 검색할 일이 있나?)
+   - 수식 정리
 
-### 2. Section별 분류 개선하기
+### 2. Section별 분류 보완
+   - KBC 또는 다른 기준들의 경우, pdf 형식이 다르기 때문에, 각각에 맞게 정규표현식을 수정해야 함
    - [정규표현식(regular expression)](https://wikidocs.net/1669) 스터디 필요
-   - 각자 기준을 정해서, 기준별로 section 분류하기
+   - section별 분류가 잘 되지 않는 경우,
+      - section을 더 잘 나눌 수 있는 알고리즘 필요
+      - 해결방법을 찾지 못하는 경우, 수작업으로 분류
 
-### 3. 출판년도/ 기준별 검색 기능
-   - KDS 22 (진행중)
-   - ASCE 17 (진행중)
-   - KBC 2016 (진행중)
-   
+### 3. 출판년도별 기준 검색 기능 추가
+
+### 4. 검색 성능 Benchmark Test
+
 ### 4. 개선 및 idea 도출을 위한 스터디
    - [자연어 처리](https://wikidocs.net/book/2155) 스터디
    - [google](https://developers.google.com/search/docs/fundamentals/how-search-works?hl=ko) 등에서 사용하는 검색 알고리즘
@@ -32,10 +38,12 @@
    - 자동완성
    - 구조 분야에서 확장할 수 있는 분야 생각해보기
 
-### 5. UI 작성
-   - UI 작성에 대한 아이디어 제시
-   - UI 작성 작업 분배 어떻게 할지
-   
+
+### 기타 아이디어
+- 검색어 ranking
+- 인기검색어
+- 자동완성
+
 #  간략한 Flow Chart
 ![image](https://user-images.githubusercontent.com/95464748/235672748-5b68395f-34ac-4222-9945-2480451accd6.png)
 

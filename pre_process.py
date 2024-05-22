@@ -4,7 +4,7 @@ import PyPDF2
 import ast
 
 
-def pdf2section(pdf_file, start_page=1, end_page=0):
+def pdf2section(pdf_file, start_page=1, end_page=0) -> None:
     r'''
     기준(또는 지침) pdf 파일을 section 단위로 분할하여 txt로 출력하는 함수.
     
@@ -23,7 +23,7 @@ def pdf2section(pdf_file, start_page=1, end_page=0):
                 
     Returns
     -------
-    txt 파일 : list of tuples - (Code Name, Page Number, Section Title, Section Content)
+    text file(.txt) : list of tuples - (Code Name, Page Number, Section Title, Section Content)
     
     * With line 110,111 : txt파일을 불러와 list of tuples로 변환하여 사용 가능.
     
@@ -101,9 +101,14 @@ def pdf2section(pdf_file, start_page=1, end_page=0):
     with open('converted_txt/{}.txt'.format(code_name), 'w', encoding='utf8') as f:
         f.write(str(section_list))
 
-# test
-pdf2section(r'C:\Users\hwlee\Desktop\Python\building-code-search-engine\data\KDS 41 17 00 건축물 내진설계기준.pdf'
-            , start_page=9, end_page=130)
-# test - txt 파일을 읽어서 list로 변환
-with open('converted_txt/KDS 41 17 00 건축물 내진설계기준.txt', 'r', encoding='utf8') as f:
-    section_list = ast.literal_eval(f.read())
+def main():
+    # test
+    pdf2section(r'C:\Users\hwlee\Desktop\Python\building-code-search-engine\data\KDS 41 30 20 건축물 강합성구조 설계기준.pdf'
+                , start_page=5, end_page=44)
+    # test - txt 파일을 읽어서 list로 변환
+    with open('converted_txt/KDS 41 30 20 건축물 강합성구조 설계기준.txt', 'r', encoding='utf8') as f:
+        section_list = ast.literal_eval(f.read())
+    return section_list
+
+if __name__ == '__main__':
+    section_list = main()
