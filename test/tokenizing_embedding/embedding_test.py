@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 #%% OpenAI Embeddings
+=======
+>>>>>>> eb86050a5343402eab91284926a264ac51d1b9f5
 import os
 import pandas as pd
 import numpy as np
 import openai
+<<<<<<< HEAD
 from openai import OpenAI
 
 # OpenAI API key
@@ -34,3 +38,16 @@ embeddings = embed_model.embed_query(text)
 # Print
 print(embeddings[:5])
 print(len(embeddings))
+=======
+from openai import OpenAPI
+from langchain_openai import OpenAIEmbeddings
+
+# OpenAI API key
+os.environ["OPENAI_API_KEY"] = "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"
+
+# text
+text = 'Hello World'
+
+# Embedding Model
+embeddings = OpenAIEmbeddings(model='text-embedding-ada-002')
+>>>>>>> eb86050a5343402eab91284926a264ac51d1b9f5

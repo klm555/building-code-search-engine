@@ -3,40 +3,37 @@ import re
 import PyPDF2
 import ast
 
-def pdf2section(pdf_file, start_page=1, end_page=0):
 
-    '''
-
+def pdf2section(pdf_file, start_page=1, end_page=0) -> None:
+    r'''
     기준(또는 지침) pdf 파일을 section 단위로 분할하여 txt로 출력하는 함수.
-
+    
     * KDS(2022) 형식에 맞춰 작성되었으며, 추후 다른 기준에 맞춰 수정 필요.
     * PyPDF2 패키지를 사용하여, 이미지 형식의 pdf 파일은 읽을 수 없음.
     
     Parameters
     ----------
     pdf_file : str
-               기준(또는 지침) pdf 파일. (ex. 'C:\Users\KDS 41 17 00 건축물 내진설계기준.pdf')
+    기준(또는 지침) pdf 파일. (ex. 'C:\Users\KDS 41 17 00 건축물 내진설계기준.pdf')
                  
     start_page : int, optional, default=1
-                 pdf에서 변환을 시작할 페이지. 표지 또는 목차 등을 제외할 때 사용 가능함.
-    
+    pdf에서 변환을 시작할 페이지. 표지 또는 목차 등을 제외할 때 사용 가능함.
     end_page : int, optional, default=0
-                pdf에서 변환을 종료할 페이지. 입력하지 않을 경우(end_page=0), pdf의 마지막 페이지로 설정.
-    
+    pdf에서 변환을 종료할 페이지. 입력하지 않을 경우(end_page=0), pdf의 마지막 페이지로 설정.
+                
     Returns
     -------
-    txt 파일 : list of tuples - (Code Name, Page Number, Section Title, Section Content)
-
+    text file(.txt) : list of tuples - (Code Name, Page Number, Section Title, Section Content)
+    
     * With line 110,111 : txt파일을 불러와 list of tuples로 변환하여 사용 가능.
-
+    
     Other Parameters
     ----------------
     None
-
+    
     Raises
     -------
     None
-    
     '''
 
     # 파일명 읽을 때 생기는 unicode error 방지
@@ -104,8 +101,14 @@ def pdf2section(pdf_file, start_page=1, end_page=0):
     with open('converted_txt/{}.txt'.format(code_name), 'w', encoding='utf8') as f:
         f.write(str(section_list))
 
-# test
-pdf2section(r'C:\Users\hwlee\Desktop\Python\building-code-search-engine\data\KDS 41 17 00 건축물 내진설계기준.pdf', start_page=9, end_page=130)
-# test - txt 파일을 읽어서 list로 변환
-with open('converted_txt/KDS 41 17 00 건축물 내진설계기준.txt', 'r', encoding='utf8') as f:
-    section_list = ast.literal_eval(f.read())
+def main():
+    # test
+    pdf2section(r'C:\Users\hwlee\Desktop\Python\building-code-search-engine\data\KDS 41 30 20 건축물 강합성구조 설계기준.pdf'
+                , start_page=5, end_page=44)
+    # test - txt 파일을 읽어서 list로 변환
+    with open('converted_txt/KDS 41 30 20 건축물 강합성구조 설계기준.txt', 'r', encoding='utf8') as f:
+        section_list = ast.literal_eval(f.read())
+    return section_list
+
+if __name__ == '__main__':
+    section_list = main()
